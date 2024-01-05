@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+		<base href="/" />
+
+		<meta charset="UTF-8" />
+		<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+		<meta name="description" content="Quanh Ta" />
+
+		<!-- Open Graph tags -->
+		<meta property="og:title" content="Tìm kiếm Quanh Ta trên bản đồ">
+		<meta property="og:description" content="Cộng đồng quanh ta: Mua bán cho thuê bất động sản, đồ cũ, ..">
+		<meta property="og:image" content="favicon.png">
+
+		<!-- iOS meta tags & icons -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="Quanh Ta" />
+		<meta name="google-site-verification" content="yO8polwzxeHTcgMm4QksL6PNfFgDr7DpktEyORAvdAw" />
+		<link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="favicon.png" />
+
+		<title>Quanh Ta</title>
+		<link rel="canonical" href="https://quanhta.vn" />
+		<link rel="manifest" href="manifest.json" />
+		<script>window.flutterfire_web_sdk_version = '9.22.1';</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNU7igk_2x8_JPATXGJs3oIzcZQSVQHxQ&region=VI&language=vi&libraries=places&callback=Function.prototype"></script>
+		<script>
+			// The value below is injected by flutter build, do not touch.
+			const serviceWorkerVersion = "1803758238";
+		</script>
+		<!-- This script adds the flutter initialization JS code -->
+		<script src="flutter.js" defer=""></script>
+		<!--image cropper-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css"
+		/>
+		<script
+			defer=""
+			src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"
+		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9086051818447396"
+			crossorigin="anonymous"
+		></script>
+		<style>
+			.grecaptcha-badge {
+				visibility: hidden;
+			}
+
+			:root {
+				--fade-time: 0.5s;
+				--bg-color: hsl(40, 7%, 11%);
+			}
+
+			#preloader {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				background-color: var(--bg-color);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#preloader img {
+				width: 236px;
+				height: 71px;
+			}
+
+			.fade-out {
+				animation: fadeOut ease var(--fade-time) forwards;
+				-webkit-animation: fadeOut ease var(--fade-time) forwards;
+				-moz-animation: fadeOut ease var(--fade-time) forwards;
+				-o-animation: fadeOut ease var(--fade-time) forwards;
+				-ms-animation: fadeOut ease var(--fade-time) forwards;
+			}
+			@keyframes fadeOut {
+				from {
+					opacity: 1; /* Start opacity */
+				}
+				to {
+					opacity: 0; /* End opacity */
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- preloader -->
+		<div id="preloader">
+			<img
+				src="./noloop-100.gif"
+				alt="Preloading Logo"
+			/>
+		</div>
+		<!-- <script>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", function () {
+					navigator.serviceWorker.register("firebase-messaging-sw.js");
+				});
+
+				window.addEventListener('flutter-first-frame', function () {
+					navigator.serviceWorker.register('flutter_service_worker.js?v=1803758238');
+				});
+			}
+		</script> -->
+		<script>
+			let useHtml = false;
+
+			function isiOS() {
+				return [ 'iPad', 'iPhone', 'iPod' ].includes(navigator.platform) ||
+				(navigator.userAgent.includes("Mac") && "ontouchend" in document) // iPad on iOS 13 detection
+			}
+
+			useHtml = isiOS();
+
+			const GIF_TIME = 2400;
+			const FADE_TIME = 500;
+			const preloader = document.getElementById('preloader');
+			// no cache
+			preloader.children[0].src =
+				preloader.children[0].src + '?v=' + Date.now();
+
+			window.addEventListener('load', function(ev) {
+				// Download main.dart.js
+				_flutter.loader.loadEntrypoint({
+					serviceWorker: {
+					serviceWorkerVersion: serviceWorkerVersion,
+				},
+				onEntrypointLoaded: function(engineInitializer) {
+
+					let config = {
+						renderer: useHtml ? "html" : "canvaskit",
+					};
+
+					engineInitializer.initializeEngine(config).then(function(appRunner) {
+						preloader.remove();
+						appRunner.runApp();
+					});
+				}
+			});
+			});
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/pica@9.0.1/dist/pica.min.js"></script>
+
+		<!-- or -->
+		<script src="https://unpkg.com/pica/dist/pica.min.js"></script>
+		<script>
+			var visibilityChange;
+
+			if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support
+				visibilityChange = "visibilitychange";
+			} else if (typeof document.msHidden !== "undefined") {
+				visibilityChange = "msvisibilitychange";
+			} else if (typeof document.webkitHidden !== "undefined") {
+				visibilityChange = "webkitvisibilitychange";
+			} else {
+				//^different browsers^
+				visibilityChange = "visibilitychange";
+			}
+
+			document.addEventListener(
+				visibilityChange, 
+				function(){
+					onWebAppLifecycleStateChanged(document.hidden);
+				}, 
+				false,
+			);
+		</script>
+	</body>
+</html>

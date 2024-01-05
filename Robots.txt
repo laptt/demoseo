@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /:8443/
+Disallow: /:10000/

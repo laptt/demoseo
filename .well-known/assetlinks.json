@@ -1,0 +1,6 @@
+[  {
+  "relation": ["delegate_permission/common.handle_all_urls"],    "target": {
+    "namespace": "android_app",      "package_name": "vn.quanhta.superapp",
+    "sha256_cert_fingerprints":        ["DA:DB:EA:70:7A:F8:94:27:32:7C:55:7E:7E:A6:22:64:4C:58:33:14:AD:08:1B:9B:EA:9C:95:91:35:3B:6C:9D"]
+  }  }
+]

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+      "apps": [],
+      "details": [
+      {
+        "appID": "M86KU337C8.vn.quanhta.superapp",
+        "paths": ["*"]
+      }
+    ]
+  }
+}
