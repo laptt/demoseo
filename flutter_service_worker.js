@@ -298,7 +298,7 @@ const RESOURCES = {".well-known/apple-app-site-association": "64662545defd303ae8
 "icons/Icon-512.png": "9b758853373717a2f801e9d8240ae314",
 "icons/Icon-maskable-192.png": "33b3e7ddc013669fd82b72de7e6e3251",
 "icons/Icon-maskable-512.png": "9b758853373717a2f801e9d8240ae314",
-"index.html": "ef28b49b9a30291eea6d09948c0247cb",
+"index.html": "749f53be509f14648de90a32c5559b25",
 "/": "5068290e0f48e016bb2108fdb50e6f94",
 "main.dart.js": "fe578a3b5d2144dba0b82fc6842263bb",
 "manifest.json": "c1f901802a5d43678ff8e33e82e7067d",
